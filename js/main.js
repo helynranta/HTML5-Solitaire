@@ -1,7 +1,7 @@
 /*
  *  Game of Solitaire
  *  www-course assignment nr. 1 
- *  Lassi Lääti 0387959   
+ *  Lassi Lääti  
  *	
  *	REFERENCES:
  *	http://davidwalsh.name/css-flip
