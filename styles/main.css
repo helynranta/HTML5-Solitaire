@@ -1,0 +1,167 @@
+
+body
+{
+	background-color: green;
+}
+#clock
+{
+	display: inline-block;
+	float:right;
+	margin-right: 100px;
+	color:white;
+	width: 150px;
+}
+#info
+{
+	float: right;
+	display: inline-block;
+}
+#error{
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	font-size: 12px;
+	color: white;
+}
+td
+{
+	width: 50px;
+	height: 20px;
+	font-family: Lato;
+	font-weight: 900;
+	font-size: 20px;
+}
+#dialog input
+{
+	position: absolute;
+	display: block;
+	float: left;
+	left: 75px;
+	top: 200px;
+}
+#content
+{
+	color: white;
+	width: 1300px;
+	height: 100%;
+	margin: 0 auto;
+}
+#top10
+{
+	margin-left:30px;
+	display: inline-table;
+}
+#content-bottom-stacks
+{
+	padding: 0;
+	width: 1300px;
+	margin-top: 40px;
+	float: left;
+}
+#content-top-stacks
+{
+	float: right;
+	display: inline-block;
+	width: 500px;
+}
+
+#dealer2
+{
+	margin-left: 100px;
+	width: 200px;
+	height: 200px;
+	border: none;
+	display: inline-block;
+	position: absolute;
+	float: left;
+}
+#dealer
+{
+	width: 100px;
+	height: 150px;
+	border: solid white;
+	display: inline-block;
+	text-align: center;
+	font-family: 'Lato';
+	font-weight: 900;
+	font-size: 16px;
+	color: white;
+	float: left;
+}
+/*inline table is the most clean way to do this, but doesnt work correctly in safari. == fuck you steve*/
+.stack
+{
+	z-index: -5;
+	width: 100px;
+	height: 150px;
+	top:0;left:0;
+	border: solid white;
+	display: inline-table;
+	text-align: center;
+	font-family: 'Lato';
+	font-weight: 900;
+	font-size: 16px;
+	color: white;
+}
+
+/*
+* Beautiful tutorial about flipping div here
+* http://davidwalsh.name/css-flip
+*/
+
+/*entire container, keeps perspective*/
+.card-container
+{
+	-ms-transform: perspective(1000px);
+	-moz-transform: perspective(1000px);
+	-webkit-transform: perspective(1000px);
+	transform: perspective(1000px);
+	display: inline-block;
+	position: absolute;
+}
+
+.card-container, .front, .back
+{
+	width: 100px;
+	height: 150px;
+	display: inline-block;
+
+}
+/*flip speed goes here*/
+.card
+{
+	-ms-transition: 0.4s;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+/*hide back of pane during swap*/
+.front, .back
+{
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.front
+{
+	z-index: 1;
+	/*firefox 31*/
+	-ms-transform:rotateY(180deg);
+	-webkit-transform:rotateY(180deg);
+	transform: rotateY(180deg);
+	background-image: url("../img/Sprite Sheets/classic_13x4x560x780.png");
+	background-size: 1300px 600px;
+}
+/*back is init hidden*/
+.back
+{
+	-ms-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform: rotateY(0deg);
+	background-image: url("../img/Backs/Card-Back-05.png");
+	background-size: 100px 150px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>WWW Harjoitustyö 1 Raportti</title>
+	<link rel="stylesheet" type="text/css" href="styles/readme.css">
+</head>
+<body>
+	<div id="page">
+		<input type="button" style="margin-top: 5px" value="BACK" onclick="window.location='./index.html';">
+		<h1>A4 kokoinen WWW HT1 reprot</h1>
+		<h3>0387959 Lassi Lääti</h3>
+		<p >
+			Kurssin ensimmäisen harjoitustyön aiheena oli tehdä html-css-js peli. Tehtävässä sai käyttää 	hyväksi jQuery ja jQuery ui kirjastoja. Oma pelini on korttipelivaihtoehdosta väännetty pasianssi (Seiska/Solitaire) peli. Pelin idea on pyöritellä seitsemästä pakasta ja ylimmääräisten korttien pakoista kortit kaikki suuruusjärjstykseen jokainen maa omaan pakkaansa.  
+		</p>
+		<p>
+			Itse pelin kehitys oli aluksi melko takkuista. Kokeilin muutamaa tapaa saada kortit liikkumaan helposti pakasta toiseen. Alusta lähtien visio oli saada kortit siirron jälkeen loogisesti olemaan toistensa sisäisiä elementtejä niin että pakan alimmaisena on aina alue mihin pakka asetetaan, ja siitä jokainen päällekkäinen kortti on alemman kortin lapsi. Hanklaluuksia olikin saada liikuteltava kortti toimimaan juuri niin kun halusin.
+		</p>
+		<p>
+			Hankalaa tehtävässä oli yhdistää jQuery UI kirjaston draggable ja droppable elementtejä niin että sain korttipinkat pelittämään kivasti. Logiikka sille miten korttien divit siirretään toisen alta toiselle oli hankala, kunnes osasin googlettaa oikeat sanat ja löysin clone helperin. Sillä liikutettava kortti kopioidaan ja pystytään lisäämään mihin tahansa elementtiin, jonka jälkeen (mikäli kortin siirto hyväksytään), kopio tuhotaan ja käytetään taas alkuperäistä elementtiä. Tämän tiedon löytäminen ns. pelasti päivän. Tämän jälkeen loppu koodin tekeminen oli helpompaa. Draggable ja droppable ovat hyödyllisiä valmiita dongeleita, mutta niiden käyttämiseen pitää vain tottua. Asiat kuten droppablen accept helpottavat työtä huomattavasti. 
+		</p>
+		<p>
+			Pelaajan nimen pystyy ainoastaan vaihtamaan kun aloitti uuden pelin, mikä on harkittu ominaisuus. Muita ominaisuuksia on pelin skaalautumattomuus. Valitettavasti jQuery ui kirjasto ei ole tarkoitettu mobiilikäyttöön, sille ei ole itseasiassa virallista tukea kosketuseventeille. Tälläinen plugin kyllä löytyy, mutta kirjaston raskauden takia peli ei ole kovin pelattava mobiililaitteilla. Korttipakassa on 52 korttia, jotka ovat parhaimmillaan kaikki jquery ui draggable elementtejä (siis ei disabled). Lisäksi pelissä on 12 droppable elementtiä, joihin kortteja voi tiputella. Tästä tulee erittäin raskas yhdistelmä, mikä aiheuttaa sen ettei esim ipad 2 halua pyörittää peliä kovin hyvin. Peli on testattu myös Samsung Galaxy Note 3 ja se toimii mutkattomasti, eli se on mobiili yhteensopiva. Kyseinen laite on kuitenkin huomattavasti keskiverto mobiililaitetta tehokkaampi eikä käy todistukseksi siitä että peli olisi tarpeeksi kevyt. Peliin olisi voinut tehdä automattisesti skaalautuvat kuvat, MUTTA kun peliä testasin, huomasin että jotta kortit saa mahtumaan ruudulle niin että pakkaa pystyy siirtämään siitä kohtaa kun haluaa, pitää korttien välille jättää ainakin 10px väliä. Tämä kertautuu todella nopeasti, jos alimpana on kuningas ja on päässyt esim femmaan saakka, kortit eivät vain yksinkertaisesti mahdu enää ruudulle jossain vaiheessa. Lisäksi, kun sanoin että peliä pystyy pelaamaan kännykällä, on se hankalaa nimenomaan tästä syystä. isolla sormella on hankala osua oikeaseen korttiin. 
+		</p>
+		<p>
+			Lisäksi pelin raskauteen vaikuttaa käytetyt css3 transform muotoilut. Peli toimii parhaiten chromella, ja yllättäen safarin uusimmalla versiolla. Tuki löytyy myös firefoxille, mutta jostain syystä siinä kuvien piirtäminen tuntuu olevan erittäin raskasta ja korttien liikkuessa käy outoa vilkkumista. Kivasti ei peliä saa toimimaan jokaisella laitteella tai ie5, mutta otin pelin kehityksen mieluummin uusien asioiden opettelun kannalta. css3 ei vaan tueta kaikkialla.
+		</p>
+		<p>
+			Itse peliin on käytetty aivan liikaa aikaa. Peli olisi ollut monta kertaa tarpeeksi valmis, mutta pelin testaaja rupesi nipottamaan todella paljon joten sieltä on etsitty ja korjattu jokainen pikkuinen bugi. Yllättäen jqueryn eventit ei toimi ihan mutkattomasti. Esim draggable elementin drop funktiolla on kaksi parametria, event ja ui, mutta missään dokumentaation puolella ei mainita että ui.draggable palauttaa juuri käytössä olevan elementin. Jos heittää console.log(ui) ja katselee sieltä sisältä mitä ui pitää sisällään niin ei sieltä mitään draggablee löydy. Kiitos vaan ei mulla muuta. Onneksi on stackoverflow. 
+		</p>
+		<p>
+			Koodi on kommentoitu kokonaan, ja lähteet on merkattu siihen kohtaan missä löydettyä informaatiota käytetään. Tässä raportissa en mene pelin toiminnalisuuksien toteutuksessa kovin syvälle koska se selviää avaamalla lähdekooditiedostot.
+		</p>
+		<p>
+			Mielestäni rajoitteet kirjastojen käytössä olivat turhia. Olin jo kerennyt aloittaa <a href="http://www.lerppana.com/LUT/www/HT1/">ensimmäisen version</a> HT:stäni, mutta valitettavasti se jäi kesken kun tehtävänanto julkistettiin. Kyseinen peli käyttää three.js
+		</p>
+	</div>
+</body>
+</html>
