@@ -1,5 +1,7 @@
 # HTML5-Solitaire
 
+![screenshot of the game](https://github.com/lasshi/HTML5-Solitaire/blob/master/screenshot.PNG)
+
 This project was created in fall 2014 at LUT on www course as a first assignment. The main point of the assignment was to show a knowledge of DOM manipulation. Because of that, the game itself isn´t made in the best possible way. More ideal way of creating game like this is (imo) a canvas. This is more of a demo of technology.
 
 ### CONTENTS
